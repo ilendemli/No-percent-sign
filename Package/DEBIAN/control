@@ -1,6 +1,6 @@
 Package: org.iLendSoft.No-percent-sign
 Name: No percent sign
-Version: 1.3-1
+Version: 1.5-1
 Description: Removes the battery '%' sign from the statusbar 
 Section: Tweaks
 Depends: firmware (>= 5.0), mobilesubstrate
