@@ -10,6 +10,9 @@
 		9E5440401BD77CF100953D08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E54403F1BD77CF100953D08 /* Foundation.framework */; settings = {ASSET_TAGS = (); }; };
 		9E54404B1BD77CF100953D08 /* no_percent_sign.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9E54404A1BD77CF100953D08 /* no_percent_sign.mm */; };
 		9E5440581BD77FBD00953D08 /* no_percent_sign.temp_caseinsensitive_rename-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 9E5440571BD77FBD00953D08 /* no_percent_sign.temp_caseinsensitive_rename-Prefix.pch */; settings = {ASSET_TAGS = (); }; };
+		9E9143571BDA11F700520D01 /* NPSSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E9143551BDA11F700520D01 /* NPSSettings.h */; settings = {ASSET_TAGS = (); }; };
+		9E9143581BDA11F700520D01 /* NPSSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9143561BDA11F700520D01 /* NPSSettings.m */; settings = {ASSET_TAGS = (); }; };
+		9E9143641BDA1C9600520D01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9143631BDA1C9600520D01 /* UIKit.framework */; };
 		9E9CC50E1BD928DE00B61E50 /* libsubstrate_arm64.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9CC50D1BD928DE00B61E50 /* libsubstrate_arm64.dylib */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +26,11 @@
 		9E54404A1BD77CF100953D08 /* no_percent_sign.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = no_percent_sign.mm; sourceTree = "<group>"; };
 		9E54404F1BD77CF100953D08 /* no_percent_sign.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = no_percent_sign.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/no_percent_sign.plist; sourceTree = "<group>"; };
 		9E5440571BD77FBD00953D08 /* no_percent_sign.temp_caseinsensitive_rename-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "no_percent_sign.temp_caseinsensitive_rename-Prefix.pch"; sourceTree = "<group>"; };
+		9E9143551BDA11F700520D01 /* NPSSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPSSettings.h; sourceTree = "<group>"; };
+		9E9143561BDA11F700520D01 /* NPSSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPSSettings.m; sourceTree = "<group>"; };
+		9E9143631BDA1C9600520D01 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9E9143661BDA1D7000520D01 /* no_percent_sign.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = no_percent_sign.plist; sourceTree = "<group>"; };
+		9E9143671BDA1D7000520D01 /* no_percent_sign@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no_percent_sign@2x.png"; sourceTree = "<group>"; };
 		9E9CC50D1BD928DE00B61E50 /* libsubstrate_arm64.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsubstrate_arm64.dylib; path = ../../../../opt/iOSOpenDev/lib/libsubstrate_arm64.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E9143641BDA1C9600520D01 /* UIKit.framework in Frameworks */,
 				9E9CC50E1BD928DE00B61E50 /* libsubstrate_arm64.dylib in Frameworks */,
 				9E5440401BD77CF100953D08 /* Foundation.framework in Frameworks */,
 			);
@@ -59,6 +68,7 @@
 		9E54403E1BD77CF100953D08 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E9143631BDA1C9600520D01 /* UIKit.framework */,
 				9E9CC50D1BD928DE00B61E50 /* libsubstrate_arm64.dylib */,
 				9E54403F1BD77CF100953D08 /* Foundation.framework */,
 			);
@@ -68,6 +78,8 @@
 		9E5440411BD77CF100953D08 /* no_percent_sign */ = {
 			isa = PBXGroup;
 			children = (
+				9E9143551BDA11F700520D01 /* NPSSettings.h */,
+				9E9143561BDA11F700520D01 /* NPSSettings.m */,
 				9E4BC13E1BD9366600038E72 /* UIStatusBarComposedData.h */,
 				9E5440491BD77CF100953D08 /* no_percent_sign.xm */,
 				9E54404A1BD77CF100953D08 /* no_percent_sign.mm */,
@@ -106,6 +118,7 @@
 		9E54404C1BD77CF100953D08 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				9E91435E1BDA19EA00520D01 /* PreferenceLoader */,
 				9E54404D1BD77CF100953D08 /* MobileSubstrate */,
 			);
 			name = Library;
@@ -127,6 +140,32 @@
 			name = DynamicLibraries;
 			sourceTree = "<group>";
 		};
+		9E91435E1BDA19EA00520D01 /* PreferenceLoader */ = {
+			isa = PBXGroup;
+			children = (
+				9E91435F1BDA19EA00520D01 /* Preferences */,
+			);
+			name = PreferenceLoader;
+			path = Package/Library/PreferenceLoader;
+			sourceTree = "<group>";
+		};
+		9E91435F1BDA19EA00520D01 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				9E9143651BDA1D7000520D01 /* no_percent_sign */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		9E9143651BDA1D7000520D01 /* no_percent_sign */ = {
+			isa = PBXGroup;
+			children = (
+				9E9143661BDA1D7000520D01 /* no_percent_sign.plist */,
+				9E9143671BDA1D7000520D01 /* no_percent_sign@2x.png */,
+			);
+			path = no_percent_sign;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -135,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E5440581BD77FBD00953D08 /* no_percent_sign.temp_caseinsensitive_rename-Prefix.pch in Headers */,
+				9E9143571BDA11F700520D01 /* NPSSettings.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E9143581BDA11F700520D01 /* NPSSettings.m in Sources */,
 				9E54404B1BD77CF100953D08 /* no_percent_sign.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,6 +1,6 @@
 Package: info.ilendemli.no-percent-sign
 Name: No percent sign
-Version: 1.6-1
+Version: 1.7-1
 Description: Removes the battery '%' sign from the statusbar
 Section: System
 Depends: firmware (>= 5.0), mobilesubstrate

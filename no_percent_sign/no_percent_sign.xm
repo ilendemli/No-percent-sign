@@ -1,6 +1,8 @@
+#import "NPSSettings.h"
 #import "UIStatusBarComposedData.h"
 
 static BOOL shouldOffset = false;
+static BOOL shouldShowBatteryIcon = false;
 
 %hook UIStatusBarBatteryPercentItemView
 
@@ -12,13 +14,13 @@ static BOOL shouldOffset = false;
     NSString *&_percentString = MSHookIvar<NSString *>(self, "_percentString");
     [_percentString release];
     
-    _percentString = [[NSString stringWithFormat:@"%i%@", batteryCapacity, shouldOffset ? @" " : @""] retain];
+    _percentString = [[NSString stringWithFormat:@"%i%@", batteryCapacity, shouldOffset && !shouldShowBatteryIcon ? @" " : @""] retain];
     
     return orig;
 }
 
 - (int)textAlignment {
-    return 0;
+    return shouldShowBatteryIcon ? %orig : 0;
 }
 
 %end
@@ -26,6 +28,8 @@ static BOOL shouldOffset = false;
 %hook UIStatusBarBatteryItemView
 
 - (id)contentsImage {
+    if (shouldShowBatteryIcon) return %orig;
+    
     return nil;
 }
 
@@ -34,3 +38,7 @@ static BOOL shouldOffset = false;
 }
 
 %end
+
+%ctor {
+    shouldShowBatteryIcon = [[NPSSettings sharedManager] shouldShowBatteryIcon];
+}
